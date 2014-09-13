@@ -1,0 +1,29 @@
+/*IE 8 & below clearfix*/
+.clearfix { zoom: 1; 
+    display: block;
+}
+/*Older IE Sticky Footer Rules*/
+
+.page-container {
+	height:auto !important;
+	height:100%;
+}
+
+/* replace responsive menu icon svg with png */
+.menu-title {
+    background: url("../images/hamburger.png") no-repeat 97.916% 50%;
+}
+
+/* * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improves image quality when scaled in IE 7.*/
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/* Corrects overflow displayed oddly in IE 9. */
+
+svg:not(:root) {
+    overflow: hidden;
+}

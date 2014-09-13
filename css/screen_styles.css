@@ -1,0 +1,389 @@
+/*
+screen_styles.css
+Project: 12-column-responsive-1200-grid
+Author: Dan White
+*/
+
+/* Table of Contents 
+1^ Site-wide General Styles
+2^ Mobile Responsive Grid/Column Definitions
+3^ Header/Navigation Styles
+4^ Footer Styles
+5^ Medium Desktop Styles
+6^ Medium Desktop Responsive Grid/Column Definitions
+7^ Large Desktop Styles
+*/
+
+
+/* Temp Styles */
+header h1,
+footer p#copyright {
+    margin:0 1.05%;
+    line-height: 2em;
+}
+
+/* Tablet/Large Phone Styles */
+
+/* 1^ Site-wide General Styles */
+
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, table, section, summary {
+    display: block;
+}
+[hidden] {
+    display: none;
+}
+* {margin: 0;
+    padding: 0;
+    border: none;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+html { 
+	height:100%;
+}
+body {text-align:center;
+    width:100%;
+    height:100%;
+    background-color:#eee;
+    font-size:100%;
+    line-height:1.5em;
+	font-family:helvetica, sans-serif;
+}
+.page-container {
+    margin: 0px auto -80px auto;/* negative bottom margin MUST match footer height and .footerpush height for sticky footer*/
+    text-align:left;
+    min-height: 100%;
+    position: relative;
+    background: #fff;
+    overflow:hidden;
+}
+a {
+    text-decoration:none;
+    font-family:helvetica, sans-serif; 
+}
+a:hover,
+a:active,
+.active { color:#f00; /* .active class used by functions.js */
+}
+
+li {
+    list-style-position:inside;
+}
+
+img {
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+article {
+	margin-top:20px;
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+.align_left {
+    float:left;
+    margin-right:2.1%; /* 20px/950px */
+}
+.align_right {
+    float:right;
+    margin-left:2.1%; /* 20px/950px */
+}
+.required,
+.selected {
+    color:#f00;
+}
+.sm-dev { /* class assigned to elements not to display on small devices */
+	display:none;
+}
+
+.none {
+	display:none;
+}
+
+/* 2^ Mobile Responsive Grid/Column Definitions */
+.grid-container {
+    margin: 0px auto;
+    padding: 0 0 0 1.05%; /* 10px/950px */
+    background: #fff;
+	width:auto;
+}
+.gridrow {
+    clear: both;
+}
+
+/* Looks for a child element that starts with "col" 
+ * be careful of a conflict with this when naming custom elements */
+.gridrow  :last-child[class^="col"] { 
+	margin: 0 0 20px 0;
+}
+
+.col1, 
+.col2, 
+.col3, 
+.col4, 
+.col5, 
+.col6, 
+.col7, 
+.col8, 
+.col9, 
+.col10, 
+.col11{
+	float: none;
+	width: 98.947%; /* 940px/950px */
+	margin: 0 2.1% 0 0; /* 20px/950px */
+}
+.col12 { width: 98.947%; margin: 0; } /* 940px/950px */
+.col-full {width:100%; margin:0; clear:both;} /* Spans entire page width */
+
+/* 3^ Header/Navigation Styles */
+
+.menu-title { /* toggle for responsive menu */
+	display:block !important;
+}
+nav#topnav {
+	width: 98.947%; /* 940px/950px */
+	float:left;
+	margin:0px 0px 0px 1.05%; /* 10px/950px */
+}
+nav#topnav a {
+	line-height:3em;
+	color:#00f;
+	display:block;
+}
+nav#topnav a:last-child {
+	border-bottom:none;
+}
+#topnav a:hover {
+    color:#f00;
+}
+
+nav#topnav ul li {
+    list-style-type:none;
+    float:none;
+    display:block;
+    position:relative;
+	margin-right:2.1%; /* 20px/950px */
+	width: 98.947%; /* 940px/950px */
+}
+
+nav#topnav li.has-submenu > a:after {
+	content: '+';
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	font-size: 1.5em;
+	padding: 0px 2.1%; /* 20px/950px */
+}
+nav#topnav li.has-submenu  > a.active:after {
+	content: "-";
+}
+nav#topnav ul.sub-menu {
+    margin-left:2.1%; /* 20px/950px */
+	display:none;
+}
+
+nav#topnav ul.sub-menu li {
+    float:none;
+}
+
+#menu-bar {
+    border-bottom:1px solid #000;
+	margin-bottom:20px;
+}
+.menu-title:before { /* text for responsive nav toggle */
+    content: "Menu";
+    float:right;
+    margin-right: 60px;
+}
+.menu-title { /* toggle div for responsive nav */
+    display:block;
+    line-height:3em;
+    position:relative;
+    width: 98.947%; /* 940px/950px */
+    float: right;
+    cursor:pointer;
+    overflow: hidden;
+    background: url("../images/hamburger.svg") no-repeat 97.916% 50%;
+}
+
+/* 4^ Footer Styles */
+
+footer { 
+    border-top:1px solid #000;
+    margin: 20px auto 0px auto;
+    position:relative;
+    text-align:left;
+    overflow:hidden;
+    height:79px; /* MUST match negative margin in .page_container, subtract any pixels added from borders*/
+    clear:both;
+    background-color:#fff;
+}
+
+#footerpush { 
+	height:80px;/* MUST Match negative margin in .page_container for sticky footer*/
+    clear:both;
+}
+nav#footer-nav {
+    margin:0 1.05%; /* 10px/950px */
+}
+nav#footer-nav ul li {
+    list-style-type:none;
+    float:left;
+    display:block;
+    margin-right:2.1%; /* 20px/950px */
+}
+nav#footer-nav ul li a {
+    color:#f00;
+}
+
+/*  5^ Medium Desktop Styles */
+
+@media all and (min-width:768px){
+	.page-container,
+	footer{
+		max-width: 960px;
+	}
+	
+	#topnav {
+		display:block;  
+	}
+	
+	nav#topnav ul li {
+		width:initial;
+		float:left;
+	}
+	
+	nav#topnav li.has-submenu > a:after {
+		display:none;
+	}
+	
+	nav#topnav ul.sub-menu {
+		display:none;  
+	}
+	.menu-title { /* toggle div for responsive nav */
+		display:none !important;
+	}
+	
+	.sm-dev { /* class assigned to elements not to display on small devices */
+		display:block;
+	}
+	
+	.none {
+		display:block;
+	}
+}
+
+/* 6^ Medium Desktop Responsive Grid/Column Definitions */
+@media all and (min-width:768px) and (max-width:1199px){
+	
+	.col1, 
+	.col2, 
+	.col3, 
+	.col4, 
+	.col5, 
+	.col6, 
+	.col7, 
+	.col8, 
+	.col9, 
+	.col10, 
+	.col11, 
+	.col12,
+	.col-full {
+		float: left;
+	}
+	
+	.col12,
+	.col-full {
+		margin: 0;
+	}
+	
+	.col1 { width: 6.315%; } /* 60px/950px */
+	.col2 { width: 14.736%; } /* 140px/950px */
+	.col3 { width: 23.157%; } /* 220px/950px */
+	.col4 { width: 31.578%; } /* 300px/950px */
+	.col5 { width: 40%; } /* 380px/950px */
+	.col6 { width: 48.421%; } /* 460px/950px */
+	.col7 { width: 56.842%; } /* 540px/950px */
+	.col8 { width: 65.263%; } /* 620px/950px */
+	.col9 { width: 73.684%; } /* 700px/950px */
+	.col10 { width: 82.105%; } /* 780px/950px */
+	.col11 { width: 90.526%; } /* 860px/950px */	
+}
+
+
+/* 7^ Large Desktop Styles */
+@media all and (min-width:1200px){
+	.page-container,
+	footer{
+		max-width: 1200px;
+	}
+	
+	.align_left {
+		margin-right:2.5%; /* 30px/1200px */
+	}
+	.align_right {
+		margin-left:2.5%; /* 30px/1200px */
+	}
+	
+	header h1,
+	footer p#copyright {
+		margin:0 1.25%; /* 15px/1200px */
+	}
+	
+	#menu-bar {
+		margin-bottom:30px;
+	}
+	
+	/* Responsive Grid/Column Definitions */
+	
+	.grid-container {
+		padding: 0 0 0 1.25%; /* 15px/1200px */
+	}
+	
+	.gridrow  :last-child[class^="col"] {
+		margin: 0 0 30px 0;
+	}
+	
+	.col1, 
+	.col2, 
+	.col3, 
+	.col4, 
+	.col5, 
+	.col6, 
+	.col7, 
+	.col8, 
+	.col9, 
+	.col10, 
+	.col11, 
+	.col12,
+	.col-full {
+		float: left;
+		margin: 0 2.5% 0 0; /* 30px/1200px */
+	}
+	
+	.col1 { width: 5.907%; } /* 70px/1200px */
+	.col2 { width: 14.345%; } /* 170px/1200px */
+	.col3 { width: 22.784%; } /* 270px/1200px */
+	.col4 { width: 31.22%; } /* 370px/1200px */
+	.col5 { width: 39.662%; } /* 470px/1200px */
+	.col6 { width: 48.101%; } /* 570px/1200px */
+	.col7 { width: 56.54%; } /* 670px/1200px */
+	.col8 { width: 64.978%; } /* 770px/1200px */
+	.col9 { width: 73.417%; } /* 870px/1200px */
+	.col10 { width: 81.856%; } /* 970px/1200px */
+	.col11 { width: 90.295%; } /* 1070px/1200px */
+	.col12 { width: 98.734%; margin: 0; } /* 1170px/1200px */
+}
