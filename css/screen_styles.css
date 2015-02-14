@@ -206,7 +206,7 @@ nav#topnav ul.sub-menu li {
 .menu-title:before { /* text for responsive nav toggle */
     content: "Menu";
     float:right;
-    margin-right: 60px;
+    margin-right: 45px;
 }
 .menu-title { /* toggle div for responsive nav */
     display:block;
@@ -216,7 +216,8 @@ nav#topnav ul.sub-menu li {
     float: right;
     cursor:pointer;
     overflow: hidden;
-    background: url("../images/hamburger.svg") no-repeat 97.916% 50%;
+    background: url("../images/hamburger.png") no-repeat 98.947% 50%; /* fallback for older browsers*/
+    background: linear-gradient(transparent, transparent),url("../images/hamburger.svg") no-repeat 98.947% 50%;
 }
 
 /* 4^ Footer Styles */
